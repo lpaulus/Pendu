@@ -1,12 +1,20 @@
+import java.util.ArrayList;
+
 public class Main {
-  private static ArrayList letterList;
-  private static boolean alreadyTaken (char c) {
-    return false;
+  private static ArrayList letterList = new ArrayList();
+  private static boolean alreadyTaken (char l) {
+    Character c = new Character(l);
+    if (letterList.contains(c)) {
+      return true;
+    } else {
+      letterList.add(c);
+      return false;
+    }
   }
   public static void main (String[] args) {
     // Creation of word
     java.util.Scanner s = new java.util.Scanner(System.in);
-    Word w = new Word ();
+    Word w = new Word();
     int chance=8;
     while (chance > 0 && !w.allFound()) {
       // display
